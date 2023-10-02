@@ -1,0 +1,111 @@
+html, body {
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url('/images/background.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    height: 48px;
+    align-items: center;
+}
+
+.list {
+    padding: 10px 20px;
+    text-transform:uppercase;
+    color: white;
+}
+
+.list a {
+    color: white;
+    text-decoration: none;
+}
+
+.list:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.list:active {
+    opacity: 0.8;
+}
+
+
+
+.todolist {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#heading {
+    margin-top: 100px;
+    top: 100px;
+    width: 400px;
+    margin-bottom: 20px;
+    background-color: #02bdff;
+    text-align: center;
+    color: white;
+    line-height: 71px;
+}
+.todolist .item {
+    display: flex;
+    height: 71px;
+    border-bottom: 1px solid #f1f1f1;
+    align-items: center;
+
+}
+
+.todolist .item p {
+    margin: 0;
+    font-size: 20px;
+}
+.todolist .item input[type='checkbox'] {
+    box-sizing: border-box;
+    margin: 0 13px;
+}
+.todolist form.item {
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 0;
+}
+
+.todolist form.item input {
+    text-align: center;
+    height: 50px;
+    width: 313px;
+    border: 0;
+    font-size: 20px;
+}
+
+.todolist form.item input:focus-visible {
+    border-bottom: 3px solid #02bdff;
+    outline: 0;
+}
+
+.todolist form.item button {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #02bdff;
+    color: #fff;
+    font-size: 15px;
+    border-width: 0;
+}
+
+input:checked+p {
+    text-decoration: line-through;
+}
+

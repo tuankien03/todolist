@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="list">
+                <i class="fa-solid fa-calendar-days fa-fade"></i>
+                <a href="/">Home</a>
+            </div>
+            <div class="list">
+                <i class="fa-solid fa-list-check"></i>
+                <a href="/work">Work</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="todolist" id="heading">
+            <h1><%= title %></h1>
+        </div>
+        <div class="todolist">
+            <% if (locals.list.items) { %>
+                <% list.items.forEach(element => { %>
+                    <form action="/delete" method="post">
+                        <div class="item">
+                            <input type="checkbox" name="checkbox"  onChange="this.form.submit()" value="<%= element._id %>">
+                            <input type="hidden" name="listname" value="<%= list.name %>">
+                            <p><%= element.todo %></p>
+                        </div>
+                    </form>
+                <% }) %>
+            <% } %>
+            <form action="/" class="item" method="post">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <button type="submit" name='list' value="<%= list.name %>">+</button>
+            </form>
+        </div>
+
+    </main>
+</body>
+
+</html>
