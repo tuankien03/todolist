@@ -9,14 +9,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('./public'))
-
-
-
-
 app.use('/', listRouter)
-
-
-
 
 app.listen(PORT, () => {
     console.log('listening on port: ' + PORT);
